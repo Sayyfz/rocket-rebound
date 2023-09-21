@@ -8,7 +8,7 @@ namespace Mechanics.Objects
         [SerializeField] private float speed; 
         private Rigidbody _rb;
 
-        void Start()
+        private void Start()
         {
             _rb = GetComponent<Rigidbody>();
             Debug.Log(FireDir);

@@ -27,10 +27,10 @@ namespace UI
 
       public override void OnLeftRoom()
       {
-         
          Destroy(gameObject);
+         MenuManager.Instance.ToggleMenu("title");
          // TODO Make another event and fire it on playerLeft and their object is destroyed
-         MenuManager.Instance.ToggleMenu("loading");
+         // MenuManager.Instance.ToggleMenu("loading");
       }
    }
 }

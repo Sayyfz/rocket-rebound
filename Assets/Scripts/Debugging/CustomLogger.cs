@@ -4,7 +4,7 @@ namespace Debugging
 {
     public static class CustomLogger
     {
-        public static void Log(string message, bool compileAnyway = false)
+        public static void Log(object message, bool compileAnyway = false)
         {
             if (compileAnyway)
             {

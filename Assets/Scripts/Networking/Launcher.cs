@@ -20,6 +20,7 @@ namespace Networking
         [SerializeField] private GameObject roomListItemPrefab;
         [SerializeField] private Transform playerListContent;
         [SerializeField] private GameObject playerListItemPrefab;
+        [SerializeField] private GameObject startGameButton;
 
         private void Awake()
         {
@@ -32,10 +33,13 @@ namespace Networking
         {
             PhotonNetwork.ConnectUsingSettings();
         }   
+        // ReSharper disable Unity.PerformanceAnalysis
         public override void OnConnectedToMaster()
         {
             MenuManager.Instance.ToggleMenu("title");
+            if (PhotonNetwork.InLobby) return;
             PhotonNetwork.JoinLobby();
+            PhotonNetwork.AutomaticallySyncScene = true;
         }
 
         public override void OnJoinedLobby()
@@ -48,11 +52,12 @@ namespace Networking
         {
             if (string.IsNullOrEmpty(roomNameInput.text))
                 return;
+        
             PhotonNetwork.CreateRoom(roomNameInput.text);
-            // TODO MOVE AWAAY THE MENU MANAGER TOGGLE MENU CALL SOMEWHERE ELSE THAT MANAGES UI 
+            // TODO MOVE AWAY THE MENU MANAGER TOGGLE MENU CALL SOMEWHERE ELSE THAT MANAGES UI 
             MenuManager.Instance.ToggleMenu("loading");
         }
-
+        
         public override void OnJoinedRoom()
         {
             
@@ -63,13 +68,18 @@ namespace Networking
             {
                 Instantiate(playerListItemPrefab, playerListContent).GetComponent<PlayerListItem>().Setup(player);
             }
-            
+            startGameButton.SetActive(PhotonNetwork.LocalPlayer.IsMasterClient);
             MenuManager.Instance.ToggleMenu("room");
+        }
+
+        public override void OnMasterClientSwitched(Player newMasterClient)
+        {
+            startGameButton.SetActive(PhotonNetwork.LocalPlayer.IsMasterClient);
         }
 
         public override void OnCreateRoomFailed(short returnCode, string message)
         {
-            CustomLogger.Log("Joined lobby", true);
+            CustomLogger.Log(message, true);
         }
 
         public void JoinRoom(RoomInfo info)
@@ -78,15 +88,21 @@ namespace Networking
             MenuManager.Instance.ToggleMenu("loading");
         }
 
+        public void StartGame()
+        {
+            PhotonNetwork.LoadLevel(1);   
+        }
         public void LeaveRoom()
         {
-            PhotonNetwork.LeaveRoom();
-            
-        }
-
-        public override void OnLeftRoom()
-        {
-            MenuManager.Instance.ToggleMenu("title");
+            if (PhotonNetwork.InRoom)
+            {
+                // if (PhotonNetwork.IsMasterClient && PhotonNetwork.CurrentRoom.PlayerCount > 1) MigrateMaster();
+                // else
+                // {
+                    PhotonNetwork.DestroyPlayerObjects(PhotonNetwork.LocalPlayer);
+                    PhotonNetwork.LeaveRoom();
+                // }
+            }
         }
 
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
@@ -95,8 +111,10 @@ namespace Networking
             {
                 Destroy(roomItem.gameObject);
             }
-            foreach (RoomInfo roomItemInfo in roomList)
+            foreach (var roomItemInfo in roomList)
             {
+                if(roomItemInfo.RemovedFromList)
+                    continue;
                 Instantiate(roomListItemPrefab, roomListContent).GetComponent<RoomListItem>().Setup(roomItemInfo);
             }
         }
