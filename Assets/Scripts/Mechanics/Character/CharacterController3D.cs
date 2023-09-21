@@ -1,7 +1,6 @@
-using Core;
 using UnityEngine;
 
-namespace CharacterMovement
+namespace Mechanics.Character
 {
     public class CharacterController3D : MonoBehaviour
     {
@@ -19,9 +18,6 @@ namespace CharacterMovement
             HandleJump();
             HandleGravity();
         }
-
-      
-
         private void FixedUpdate()
         {
             _controller.Move(_moveDir * Time.deltaTime);

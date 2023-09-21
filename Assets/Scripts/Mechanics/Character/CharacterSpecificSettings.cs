@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Core
+namespace Mechanics.Character
 {
     public class CharacterSpecificSettings : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace CharacterMovement
+namespace Mechanics.Character
 {
     public class CharacterCamera : MonoBehaviour
     {
