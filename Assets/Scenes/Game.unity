@@ -470,13 +470,74 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!1001 &311405520
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7052068173207803670, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803670, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 28.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803670, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803670, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 28.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803670, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.054239295
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803670, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803670, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.998528
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803670, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803670, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803670, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 173.782
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803670, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803671, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7052068173207803692, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c465b3d6c6e66074ea33da4265e15481, type: 3}
 --- !u!43 &563234739
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47448
+  m_Name: pb_Mesh20730
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -733,7 +794,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47460
+  m_Name: pb_Mesh20742
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2236,7 +2297,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47476
+  m_Name: pb_Mesh20758
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2400,7 +2461,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47426
+  m_Name: pb_Mesh20708
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2608,7 +2669,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh47502
+  m_Name: pb_Mesh20784
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2

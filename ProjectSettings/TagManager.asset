@@ -5,11 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - SpawnPositions
+  - Guns
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Glasses
   - Water
   - UI
   - 
