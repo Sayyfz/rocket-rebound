@@ -1,4 +1,3 @@
-using System;
 using Photon.Pun;
 using UnityEngine;
 
@@ -6,7 +5,8 @@ namespace Mechanics.Character
 {
     public class CharacterCamera : MonoBehaviour
     {
-        [SerializeField] private new Camera camera;
+        [SerializeField] private new Transform cameraHolder;
+        [SerializeField] private new Transform camera;
         [SerializeField] private float mouseSensitivity, maxX, minX;
         private PhotonView _pv;
 
@@ -35,7 +35,7 @@ namespace Mechanics.Character
             _xRotation -= Input.GetAxisRaw("Mouse Y") * mouseSensitivity;
             _xRotation = Mathf.Clamp(_xRotation, minX, maxX);
 
-            camera.transform.localRotation = Quaternion.Euler(_xRotation, 0, 0);
+            cameraHolder.localRotation = Quaternion.Euler(_xRotation, 0, 0);
             
         }
     }
