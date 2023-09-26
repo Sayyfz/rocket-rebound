@@ -5,7 +5,7 @@ namespace Mechanics.Character
 {
     public class CharacterCamera : MonoBehaviour
     {
-        [SerializeField] private new Transform cameraHolder;
+        [SerializeField] private Transform cameraHolder;
         [SerializeField] private new Transform camera;
         [SerializeField] private float mouseSensitivity, maxX, minX;
         private PhotonView _pv;
